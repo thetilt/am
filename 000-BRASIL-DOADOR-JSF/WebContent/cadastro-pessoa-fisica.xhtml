@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	
+	<ui:define name="corpo">
+	    
+	   <h1>Cadastro de Doador</h1>
+	    
+	    <h:messages />
+	    
+	    <h:form>
+	    
+	    	<h:panelGrid columns="2">
+	    	
+	    		<h:outputLabel value="Nome : " for="nome"/>
+	    		<h:inputText styclass="form-control" id="nome" value="#{pessoaFisicaBean.pessoaFisica.nome}" />
+	    		
+	    		<h:outputLabel value="Email : " for="email" />
+	    		<h:inputText styclass="form-control" id="email" value="#{pessoaFisicaBean.pessoaFisica.email}" >
+	    			<!--   <f:validator validatorId="validarEmail" /> -->
+	    		</h:inputText>
+	    		
+	    		<h:outputLabel value="Senha : " for="senha"/>
+	    		<h:inputSecret styclass="form-control" id="senha" value="#{pessoaFisicaBean.pessoaFisica.senha}" />
+	    		
+	    		<h:outputLabel value="Endereço : " for="endereco"/>
+	    		<h:inputText styclass="form-control" id="endereco" value="#{pessoaFisicaBean.pessoaFisica.endereco}" />
+	    		
+	    		<h:outputLabel value="Telefone : " for="telefone"/>
+	    		<h:inputText styclass="form-control" id="telefone" value="#{pessoaFisicaBean.pessoaFisica.telefone}" />
+	    		
+	    		<h:outputLabel value="Data de Nascimento : " for="datanascimento"/>
+	    		<p:calendar id="datanascimento" value="#{pessoaFisicaBean.pessoaFisica.dataNascimento.time}" />
+	    		
+	    		<h:outputLabel value="Sexo : " for="sexo"/>
+	    		<h:selectOneMenu styleClass="form-control" value="#{pessoaFisicaBean.pessoaFisica.genero}">
+    			<f:selectItems value="#{pessoaFisicaBean.listarSexo}"
+    						   var="tipoSangue" itemValue="#{tipoSangue.id}"
+    						   itemLabel="#{tipoSangue.descricao}" />
+				</h:selectOneMenu>
+	    		
+	    		<h:outputLabel value="Tipo Sanguineo : " for="tiposanguineo" />
+	    		<h:selectOneMenu styleClass="form-control" value="#{pessoaFisicaBean.pessoaFisica.tipoSanguineo}">
+    			<f:selectItems value="#{pessoaFisicaBean.listarSangue}" var="c" itemValue="#{c.id}" itemLabel="#{c.descricao}" converter="generic"/>
+				</h:selectOneMenu>
+	    		
+	    		<h:outputLabel value="Data da Última Doação : " for="dataultimadoacao"/>
+	    		<p:calendar  id="dataultimadoacao" value="#{pessoaFisicaBean.pessoaFisica.ultimaDoacao.time}" />
+	    				
+	    		
+	    		<h:outputLabel value="Peso : " for="peso"/>
+	    		<h:inputText styclass="form-control" id="peso" value="#{pessoaFisicaBean.pessoaFisica.peso}" />
+	    		
+	    			    			    		
+	    		<h:commandButton value="Cadastrar" actionListener="#{pessoaFisicaBean.cadastrar}"/>
+	    		
+	    		
+	    		    		    		
+	    		
+				
+				
+	    	
+	    	</h:panelGrid>
+	    	
+	    </h:form>
+	    
+	</ui:define>
+	
+</ui:composition>
+</html>

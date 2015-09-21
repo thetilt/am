@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="corpo">
+
+		<h1>Cadastro de Intituição de Saúde</h1>
+		<h:messages />
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="nome" for="nome" />
+				<h:inputText styleClass="form-control" id="nome"
+					value="#{pessoaJuridicaBean.pessoaJuridica.nome}" />
+			
+			<h:outputLabel value="cnpj" for="cnpj" />
+				<h:inputText styleClass="form-control" id="cnpj"
+					value="#{pessoaJuridicaBean.pessoaJuridica.cnpj}" />
+			
+			<h:outputLabel value="Endereco" for="endereço" />
+				<h:inputText styleClass="form-control" id="endereco"
+					value="#{pessoaJuridicaBean.pessoaJuridica.endereco}" />
+
+			<h:outputLabel value="Razão Social" for="razaosocial" />
+				<h:inputText styleClass="form-control" id="razaosocial"
+					value="#{pessoaJuridicaBean.pessoaJuridica.razaoSocial}" />
+			
+			<h:outputLabel value="Senha" for="senha" />
+				<h:inputText styleClass="form-control" id="senha"
+					value="#{pessoaJuridicaBean.pessoaJuridica.senha}" />
+			
+			<h:outputLabel value="Telefone" for="telefone" />
+				<h:inputText styleClass="form-control" id="telefone"
+					value="#{pessoaJuridicaBean.pessoaJuridica.telefone}" />
+			
+			<h:outputLabel value="Usuario Ativo" for="usuarioativo" />
+				<h:selectBooleanCheckbox styleClass="form-control" id="ativo"
+					value="#{pessoaJuridicaBean.pessoaJuridica.statusCadastro}" />
+			
+			
+
+				
+
+				<h:commandButton styleClass="btn btn-success" value="Salvar"
+					actionListener="#{pessoaJuridicaBean.cadastrar}" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
+
+
+
+
+

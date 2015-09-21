@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="_template.xhtml">
+	
+	<ui:define name="corpo">
+	    
+	    <h1>Cadastro de Tipo Sanguineo</h1>
+	    
+	    <h:messages />
+	    
+	    <h:form>
+	    	<h:panelGrid column="2">
+	    	
+	    		
+	    		<h:outputLabel value="Tipo Sanguineo" for="tiposanguineo" />
+	    		<h:inputText styleClass="form-control" id="tiposanguineo"
+	    		value="#{tipoSanguineoBean.tipoSanguineo.descricao}"/>
+	    		
+	    		
+	    		<h:commandButton styleClass="btn btn-success" value="Salvar"
+	    		actionListener="#{tipoSanguineoBean.cadastrar}"/>
+	    		
+	    	
+	    	</h:panelGrid>
+	    
+	    </h:form>
+	    
+	</ui:define>
+	
+</ui:composition>
+</html>
