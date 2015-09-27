@@ -37,14 +37,18 @@ public class PessoaFisicaBean {
 	private List<Sexo> sexo;
 	
 	
+	
+	
 	public void cadastrar(){
 		
 		FacesMessage msg;
 		
 		try {
-		
+			
 			dao.insert(pessoaFisica);
-			msg = new FacesMessage("Cadastrado com Sucesso !!");
+			msg = new FacesMessage("Cadastrado "+ pessoaFisica.getNome() +" , "
+			+ pessoaFisica.getTipoSanguineo().getDescricao() +" , "+
+			+ pessoaFisica.getId() + " com Sucesso !!");
 			
 		} catch (DBCommitException e) {
 			
@@ -65,9 +69,10 @@ public class PessoaFisicaBean {
 		pessoaFisica = new PessoaFisica();
 		pessoaFisica.setDataNascimento(Calendar.getInstance());
 		pessoaFisica.setUltimaDoacao(Calendar.getInstance());
-		TipoSanguineo tipoS = new TipoSanguineo();
-		pessoaFisica.setTipoSanguineo(tipoS);
+		
 		TipoDoador tipoDoador = new TipoDoador();
+		tipoDoador.setId(1);
+		
 		pessoaFisica.setTipo(tipoDoador);
 		
 		
@@ -136,9 +141,6 @@ public class PessoaFisicaBean {
 	}
 
 	
-
-    
-
 	
 
 	

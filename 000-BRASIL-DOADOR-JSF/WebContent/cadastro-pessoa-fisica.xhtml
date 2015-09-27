@@ -39,16 +39,16 @@
 	    		<h:outputLabel value="Data de Nascimento : " for="datanascimento"/>
 	    		<p:calendar id="datanascimento" value="#{pessoaFisicaBean.pessoaFisica.dataNascimento.time}" />
 	    		
-	    		<h:outputLabel value="Sexo : " for="sexo"/>
-	    		<h:selectOneMenu styleClass="form-control" value="#{pessoaFisicaBean.pessoaFisica.genero}">
+	    		<h:outputLabel value="Sexo : " for="sexo" />
+	    		<h:selectOneMenu styleClass="form-control" value="#{pessoaFisicaBean.pessoaFisica.genero}" converter="simpleEntityConverter">
     			<f:selectItems value="#{pessoaFisicaBean.listarSexo}"
-    						   var="tipoSangue" itemValue="#{tipoSangue.id}"
-    						   itemLabel="#{tipoSangue.descricao}" />
+    						   var="genero" itemValue="#{genero}"
+    						   itemLabel="#{genero.descricao}" />
 				</h:selectOneMenu>
 	    		
 	    		<h:outputLabel value="Tipo Sanguineo : " for="tiposanguineo" />
-	    		<h:selectOneMenu styleClass="form-control" value="#{pessoaFisicaBean.pessoaFisica.tipoSanguineo}">
-    			<f:selectItems value="#{pessoaFisicaBean.listarSangue}" var="c" itemValue="#{c.id}" itemLabel="#{c.descricao}" converter="generic"/>
+	    		<h:selectOneMenu styleClass="form-control" value="#{pessoaFisicaBean.pessoaFisica.tipoSanguineo}" converter="simpleEntityConverter">
+    			<f:selectItems value="#{pessoaFisicaBean.listarSangue}" var="c" itemValue="#{c}" itemLabel="#{c.descricao}" />
 				</h:selectOneMenu>
 	    		
 	    		<h:outputLabel value="Data da Última Doação : " for="dataultimadoacao"/>
