@@ -27,38 +27,38 @@ public class PreAgendamento {
 	
 	@ManyToOne
 	@JoinColumn(name="CD_FISICA")
-	private PessoaFisica pessoafisica;
+	private PessoaFisica pessoaFisica;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="CD_JURIDICA")
-	private PessoaJuridica pf;
+	private PessoaJuridica pessoaJuridica;
 	
 	
 	@Temporal(value=TemporalType.DATE)
 	@Column(name="DT_AGENDAMENTO",nullable=false)
 	private Calendar dataAgendamento;
 	
-	@Temporal(value=TemporalType.DATE)
-	@Column(name="DT_HORA_AGENDAMENTO",nullable=false)
-	private Calendar horaAgendamento;
-	
+		
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public PessoaFisica getPessoafisica() {
-		return pessoafisica;
+	
+	public PessoaFisica getPessoaFisica() {
+		return pessoaFisica;
 	}
-	public void setPessoafisica(PessoaFisica pessoafisica) {
-		this.pessoafisica = pessoafisica;
+	public void setPessoaFisica(PessoaFisica pessoaFisica) {
+		this.pessoaFisica = pessoaFisica;
 	}
-	public PessoaJuridica getPf() {
-		return pf;
+	
+	public PessoaJuridica getPessoaJuridica() {
+		return pessoaJuridica;
 	}
-	public void setPf(PessoaJuridica pf) {
-		this.pf = pf;
+	public void setPessoaJuridica(PessoaJuridica pj) {
+		this.pessoaJuridica = pj;
 	}
 	
 	public Calendar getDataAgendamento() {
@@ -67,12 +67,7 @@ public class PreAgendamento {
 	public void setDataAgendamento(Calendar dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
 	}
-	public Calendar getHoraAgendamento() {
-		return horaAgendamento;
-	}
-	public void setHoraAgendamento(Calendar horaAgendamento) {
-		this.horaAgendamento = horaAgendamento;
-	}
+	
 	
 	
 	

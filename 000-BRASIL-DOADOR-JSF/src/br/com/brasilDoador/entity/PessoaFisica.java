@@ -16,6 +16,11 @@ import javax.persistence.TemporalType;
 @Table(name="BDTB_PESSOA_FISICA")
 public class PessoaFisica extends Pessoa{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@ManyToOne
 	@JoinColumn(name="CD_TIPO_DOADOR")
 	private TipoDoador tipo;

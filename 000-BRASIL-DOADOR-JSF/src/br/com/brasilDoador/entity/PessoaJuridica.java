@@ -8,6 +8,11 @@ import javax.persistence.Table;
 @Table(name="BDTB_PJURIDICA")
 public class PessoaJuridica extends Pessoa{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Column(name="DS_CNPJ",nullable=false,length=20)
 	private long cnpj;
 	

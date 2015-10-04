@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	
+	<ui:define name="corpo">
+	    
+	   <h1>Cadastro de Agendamento</h1>
+	    
+	    <h:messages />
+	    
+	    <h:form>
+	    
+	    	<h:panelGrid columns="2">
+	    	
+	    			    			    		
+	    		<h:outputLabel value="Data do Agendamento : " for="dataagenda"/>
+	    		<p:calendar id="dataagenda" value="#{preAgendamentoBean.preAgendamento.dataAgendamento.time}" />
+	    		    		
+	    		
+	    		<h:outputLabel value="Hospital : " for="hospital" />
+	    		<h:selectOneMenu id="hospital" styleClass="form-control" value="#{preAgendamentoBean.preAgendamento.pessoaJuridica}" converter="simpleEntityConverter">
+    			<f:selectItems value="#{preAgendamentoBean.pj}"
+    						   var="pj" itemValue="#{pj}"
+    						   itemLabel="#{pj.nome}" />
+				</h:selectOneMenu>
+	    		
+	    		
+	    		<h:outputLabel value="Doador : " for="doador" />
+	    		<h:selectOneMenu id="doador" styleClass="form-control" value="#{preAgendamentoBean.preAgendamento.pessoaFisica}" converter="simpleEntityConverter">
+    			<f:selectItems value="#{preAgendamentoBean.pf}"
+    						   var="pf" itemValue="#{pf}"
+    						   itemLabel="#{pf.nome}" />
+				</h:selectOneMenu>
+	    		 		
+	    			    			    		
+	    		<h:commandButton value="Cadastrar" actionListener="#{preAgendamentoBean.cadastrar}"/>
+	    		
+	    				    		    		
+	    		
+				
+				
+	    	
+	    	</h:panelGrid>
+	    	
+	    </h:form>
+	    
+	</ui:define>
+	
+</ui:composition>
+</html>

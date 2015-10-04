@@ -141,9 +141,8 @@ public class TestePersist {
 		PreAgendamento preAgenda = new PreAgendamento();
 		
 		preAgenda.setDataAgendamento(Calendar.getInstance());
-		preAgenda.setHoraAgendamento(Calendar.getInstance());
-		preAgenda.setPessoafisica(pessoaFisica);
-		preAgenda.setPf(pJuridica);
+		preAgenda.setPessoaFisica(pessoaFisica);
+		preAgenda.setPessoaJuridica(pJuridica);
 		
 		PreAgendamentoDAOImpl preAgendamentoDAOImpl = new PreAgendamentoDAOImpl(em);
 		
