@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	
+	<ui:define name="corpo">
+	    
+	   <h1>Cadastro de Campanha</h1>
+	    
+	    <h:messages />
+	    
+	    <h:form>
+	    
+	    	<h:panelGrid columns="2">
+	    	
+	    		<h:outputLabel value="Nome : " for="nome"/>
+	    		<h:inputText styclass="form-control" id="nome" value="#{campanhaBean.campanha.descricao}" />
+	    		
+	    		<h:outputLabel value="Descrição da Campanha : " for="detalhes" />
+	    		<h:inputText styclass="form-control" id="detalhes" value="#{campanhaBean.campanha.detalhes}" >
+	    			<!--   <f:validator validatorId="validarEmail" /> -->
+	    		</h:inputText>
+	    			    			    		
+	    		<h:outputLabel value="Data de Inicio : " for="datainicio"/>
+	    		<p:calendar id="datainicio" value="#{campanhaBean.campanha.dataInicio.time}" />
+	    		
+	    		<h:outputLabel value="Data de Inicio : " for="datafim"/>
+	    		<p:calendar id="datafim" value="#{campanhaBean.campanha.dataFim.time}" />
+	    		
+	    		<!--  Remover após alimentar Banco de Dados -->
+	    		<h:outputLabel value="Hospital : " for="hospital" />
+	    		<h:selectOneMenu styleClass="form-control" value="#{campanhaBean.campanha.pj}" converter="simpleEntityConverter">
+    			<f:selectItems value="#{campanhaBean.listPessoa}"
+    						   var="pj" itemValue="#{pj}"
+    						   itemLabel="#{pj.nome}" />
+				</h:selectOneMenu>
+	    		
+	    		 		
+	    			    			    		
+	    		<h:commandButton value="Cadastrar" actionListener="#{campanhaBean.cadsatrar}"/>
+	    		
+	    		
+	    		    		    		
+	    		
+				
+				
+	    	
+	    	</h:panelGrid>
+	    	
+	    </h:form>
+	    
+	</ui:define>
+	
+</ui:composition>
+</html>
