@@ -40,6 +40,10 @@ public class Campanha {
 	private PessoaJuridica pj;
 	
 	
+	@Column(name="DS_DETALHES")
+	private String detalhes;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -70,6 +74,15 @@ public class Campanha {
 	public void setPj(PessoaJuridica pj) {
 		this.pj = pj;
 	}
+	
+	public String getDetalhes() {
+		return detalhes;
+	}
+	public void setDetalhes(String detalhes) {
+		this.detalhes = detalhes;
+	}
+	
+	
 	
 	
 	
