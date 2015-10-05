@@ -19,6 +19,25 @@ public class PessoaFisicaDAOImpl extends DAOImpl<PessoaFisica, Integer> implemen
 	
 		return em.createQuery("from PessoaFisica",PessoaFisica.class).getResultList();
 	}
+
+	@Override
+	public boolean logar(String email, String senha) {
+		try{
+			em.createQuery("from PessoaFisica u where "
+					+ "u.email = :l and u.senha = :s")
+					.setParameter("l", email)
+					.setParameter("s", senha).getSingleResult();
+				return true;
+			}catch(Exception e){
+				return false;
+			}
+	}
+
+	@Override
+	public PessoaFisica searchByEmail(String email) {
+		
+		return em.find(PessoaFisica.class, email);
+	}
 	
 	
 	

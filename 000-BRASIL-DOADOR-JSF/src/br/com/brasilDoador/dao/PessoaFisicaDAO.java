@@ -9,5 +9,9 @@ import br.com.brasilDoador.entity.PessoaFisica;
 public interface PessoaFisicaDAO extends DAO<PessoaFisica, Integer>{
 	
 	public List<PessoaFisica> listar();
+	
+	PessoaFisica searchByEmail(String email);
+	
+	boolean logar(String email, String senha);
 
 }
