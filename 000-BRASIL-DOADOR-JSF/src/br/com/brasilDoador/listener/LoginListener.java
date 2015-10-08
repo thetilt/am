@@ -19,7 +19,7 @@ public class LoginListener implements PhaseListener {
 		
 		//Verifica a p�gina que o usu�rio vai acessar
 		String pagina = context.getViewRoot().getViewId();
-		//if (pagina.contains("cadastro-usuario")) return;
+		if (pagina.contains("cadastro-usuario")) return;
 			
 		
 		//Recuperar a sess�o do usu�rio
@@ -27,7 +27,7 @@ public class LoginListener implements PhaseListener {
 				.getExternalContext().getSession(false);
 		
 		//Validar a sess�o do usu�rio
-		if (sessao == null || sessao.getAttribute("usuario") == null){
+		if (sessao == null || sessao.getAttribute("nome") == null){
 			//Redirecionar para a tela de login
 			NavigationHandler navegacao = context
 					.getApplication().getNavigationHandler();

@@ -33,9 +33,9 @@ public class TestePersist {
 		
 		pJuridica.setEndereco("Rua 1,2");
 		pJuridica.setNome("DANIEL OLIVEIRA LEMOS");
-		pJuridica.setEmail("daniel.o.pedrera@ggmuil.com");
+		pJuridica.setEmail("daniel");
 		pJuridica.setRazaoSocial("Cavalaria Samoa");
-		pJuridica.setSenha("6565654644");
+		pJuridica.setSenha("123");
 		pJuridica.setTelefone("65465464");
 		pJuridica.setStatusCadastro(true);
 		pJuridica.setSenha("65465456");
@@ -98,12 +98,12 @@ public class TestePersist {
 		pessoaFisica.setEndereco("Rua 1, numero 2");
 		pessoaFisica.setGenero(sexo);
 		pessoaFisica.setNome("Daniel Oliveira Lemos");
-		pessoaFisica.setEmail("jeromelvieira@hotmail.com");
+		pessoaFisica.setEmail("daniel");
 		pessoaFisica.setPeso(54);
 		pessoaFisica.setPontuacao(0);
 		pessoaFisica.setTipo(tipoDoador);
 		pessoaFisica.setTipoSanguineo(tipoSanguineo);
-		pessoaFisica.setTelefone("64554644");
+		pessoaFisica.setTelefone("123");
 		pessoaFisica.setUltimaDoacao(Calendar.getInstance());
 		pessoaFisica.setUltimaDoacao(Calendar.getInstance());
 		pessoaFisica.setSenha("131113111");

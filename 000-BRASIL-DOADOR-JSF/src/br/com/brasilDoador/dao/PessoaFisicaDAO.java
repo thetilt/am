@@ -2,6 +2,7 @@ package br.com.brasilDoador.dao;
 
 import java.util.List;
 
+import br.com.brasilDoador.entity.Pessoa;
 import br.com.brasilDoador.entity.PessoaFisica;
 
 

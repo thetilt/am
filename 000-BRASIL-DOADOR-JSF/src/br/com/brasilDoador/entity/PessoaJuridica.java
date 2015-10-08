@@ -16,7 +16,7 @@ public class PessoaJuridica extends Pessoa{
 	@Column(name="DS_CNPJ",nullable=false,length=20)
 	private long cnpj;
 	
-	@Column(name="DS_RAZAO_SOCIAL",nullable=false,length=20)
+	@Column(name="DS_RAZAO_SOCIAL",nullable=false,length=80)
 	private String razaoSocial;
 	
 	@Column(name="ds_status_cadastro",nullable=false)

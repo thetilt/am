@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="_template.xhtml">
 	<ui:define name="corpo">
@@ -13,40 +14,47 @@
 		<h:messages />
 		<h:form>
 			<h:panelGrid columns="2">
-				<h:outputLabel value="nome" for="nome" />
-				<h:inputText styleClass="form-control" id="nome"
+				<p:outputLabel value="nome" for="nome" />
+				<p:inputText  id="nome"
 					value="#{pessoaJuridicaBean.pessoaJuridica.nome}" />
 			
-			<h:outputLabel value="cnpj" for="cnpj" />
-				<h:inputText styleClass="form-control" id="cnpj"
+			<p:outputLabel value="Email : " for="email" />
+	    		<p:inputText id="email" value="#{pessoaJuridicaBean.pessoaJuridica.email}" />
+	    		
+	    	
+			
+			<p:outputLabel value="cnpj" for="cnpj" />
+				<p:inputText  id="cnpj"
 					value="#{pessoaJuridicaBean.pessoaJuridica.cnpj}" />
 			
-			<h:outputLabel value="Endereco" for="endereço" />
-				<h:inputText styleClass="form-control" id="endereco"
+			<p:outputLabel value="Endereco" for="endereco" />
+				<p:inputText styleClass="form-control" id="endereco"
 					value="#{pessoaJuridicaBean.pessoaJuridica.endereco}" />
 
-			<h:outputLabel value="Razão Social" for="razaosocial" />
-				<h:inputText styleClass="form-control" id="razaosocial"
+			<p:outputLabel value="Razão Social" for="razaosocial" />
+				<p:inputText styleClass="form-control" id="razaosocial"
 					value="#{pessoaJuridicaBean.pessoaJuridica.razaoSocial}" />
 			
-			<h:outputLabel value="Senha" for="senha" />
-				<h:inputText styleClass="form-control" id="senha"
+			<p:outputLabel value="Senha" for="senha" />
+				<p:inputText styleClass="form-control" id="senha"
 					value="#{pessoaJuridicaBean.pessoaJuridica.senha}" />
 			
-			<h:outputLabel value="Telefone" for="telefone" />
-				<h:inputText styleClass="form-control" id="telefone"
+			<p:outputLabel value="Telefone" for="telefone" />
+				<p:inputText styleClass="form-control" id="telefone"
 					value="#{pessoaJuridicaBean.pessoaJuridica.telefone}" />
 			
-			<h:outputLabel value="Usuario Ativo" for="usuarioativo" />
-				<h:selectBooleanCheckbox styleClass="form-control" id="ativo"
+			<p:outputLabel value="Usuario Ativo" for="usuarioativo" />
+				<h:selectBooleanCheckbox  id="usuarioativo"
 					value="#{pessoaJuridicaBean.pessoaJuridica.statusCadastro}" />
 			
 			
 
 				
 
-				<h:commandButton styleClass="btn btn-success" value="Salvar"
+				<p:commandButton styleClass="btn btn-success" value="Salvar"
 					actionListener="#{pessoaJuridicaBean.cadastrar}" />
+			
+			<p:growl autoUpdate="true"/>	
 			</h:panelGrid>
 		</h:form>
 	</ui:define>

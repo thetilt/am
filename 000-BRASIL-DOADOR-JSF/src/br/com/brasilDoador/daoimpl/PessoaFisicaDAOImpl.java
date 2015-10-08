@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.brasilDoador.dao.PessoaFisicaDAO;
+import br.com.brasilDoador.entity.Pessoa;
 import br.com.brasilDoador.entity.PessoaFisica;
 
 public class PessoaFisicaDAOImpl extends DAOImpl<PessoaFisica, Integer> implements PessoaFisicaDAO{
@@ -23,7 +24,7 @@ public class PessoaFisicaDAOImpl extends DAOImpl<PessoaFisica, Integer> implemen
 	@Override
 	public boolean logar(String email, String senha) {
 		try{
-			em.createQuery("from PessoaFisica u where "
+			em.createQuery("from Pessoa u where "
 					+ "u.email = :l and u.senha = :s")
 					.setParameter("l", email)
 					.setParameter("s", senha).getSingleResult();

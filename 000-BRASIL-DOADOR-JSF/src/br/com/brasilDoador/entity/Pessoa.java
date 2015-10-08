@@ -21,7 +21,7 @@ import br.com.brasilDoador.validacoes.BaseEntity;
 @Inheritance(strategy=InheritanceType.JOINED)
 @Table(name="BDTB_PESSOA")
 @SequenceGenerator(name="seqPessoa",sequenceName="SEQ_PESSOA",allocationSize=1)
-public abstract class Pessoa implements Serializable, BaseEntity{
+public class Pessoa implements Serializable, BaseEntity{
 	
 	
 	/**
@@ -32,7 +32,7 @@ public abstract class Pessoa implements Serializable, BaseEntity{
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqPessoa")
 	@Column(name="CD_PESSOA")
-	private int id;
+	private Integer id;
 	
 	@Column(name="DS_EMAIL",nullable=false, length=100)
 	private String email;

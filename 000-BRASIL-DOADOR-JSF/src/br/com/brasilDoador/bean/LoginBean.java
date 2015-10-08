@@ -26,6 +26,7 @@ public class LoginBean {
 	private void init(){
 		EntityManager em = EMFSingleton.getInstance().createEntityManager();
 		dao = new PessoaFisicaDAOImpl(em);
+		
 	}
 	
 	public String deslogar(){
@@ -47,11 +48,11 @@ public class LoginBean {
 					.getCurrentInstance().getExternalContext()
 					.getSession(true);
 			//Recupera o usu�rio do DB
-			PessoaFisica usuario = dao.searchByEmail(email);
+			//PessoaFisica usuario = dao.searchByEmail(pessoaFisica.getEmail());
 			//Colocar uma informa�ao na sess�o
-			sessao.setAttribute("nome", usuario);
+			sessao.setAttribute("nome", email);
 			
-			return "index"; //Navega para a p�gina Index
+			return "cadastro-tipo-sanguineo"; //Navega para a p�gina Index
 		}else{
 			FacesContext.getCurrentInstance()
 				.addMessage(null,
@@ -59,7 +60,7 @@ public class LoginBean {
 			return "login"; //Volta para a p�gina de login
 		}
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -75,7 +76,10 @@ public class LoginBean {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	
+	
+		
 	
 	
 }
